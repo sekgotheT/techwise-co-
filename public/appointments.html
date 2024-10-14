@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <title>Memezelo Secondary school - Book Appointment</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">Memezelo Secondary school</a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="announcements.html">Announcements</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="donate.html">Donations</a></li>
+                <li><a href="transfer.html">Transfer Request</a></li>
+                <li><a href="inquiries.html">Student Inquiries</a></li>
+                <li><a href="complaints.html">Complaints</a></li>
+                <li><a href="appointments.html">Book Appointment</a></li>
+                <li><a href="principal-portal.html">Principal's Portal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="appointments">
+            <h1>Book an Appointment</h1>
+            <p>Schedule an appointment with our staff or administration. Choose the appropriate option below to book your appointment.</p>
+            <form action="submit_appointment.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Preferred Time:</label>
+                <input type="time" id="time" name="time" required>
+
+                <button type="submit">Book Appointment</button>
+            </form>
+            <img src="images/appointments.jpg" alt="Book Appointment">
+            <video controls>
+                <source src="videos/appointments-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <!-- Advertisements -->
+        <section class="advertisements">
+            <div class="ad">
+                <img src="images/ad1.jpg" alt="Advertisement 1">
+                <p>Advertisement 1 Details</p>
+            </div>
+            <div class="ad">
+                <img src="images/ad2.jpg" alt="Advertisement 2">
+                <p>Advertisement 2 Details</p>
+            </div>
+            <div class="ad">
+                <img src="images/ad3.jpg" alt="Advertisement 3">
+                <p>Advertisement 3 Details</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Memezelo Secondary school. All rights reserved.</p>
+    </footer>
+</body>
+</html>

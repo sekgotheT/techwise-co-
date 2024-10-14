@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - "TECH WISE COORPERATIVE COMPANY</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <header>
+        <h1>"TECH WISE COORPERATIVE COMPANY"</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about our team.html">Our Team</a></li>
+                <li><a href="videos">Videos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#apply">Apply</a></li>
+                <li><a href="#comments">Comments</a></li>
+                 <li><a href="book Now.html">Book Now</a></li>
+            </ul>
+        </nav>
+    </header> 
+<body>
+    <h1>Contact Us</h1>
+    <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    
+     <footer>
+        <div class="container">
+            <p>&copy; 2024 TECH WISE Co-operative Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(this);
+            fetch('/api/comments', { // Link to the backend API
+                method: 'POST',
+                body: new URLSearchParams(formData)
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message)) // Display success message
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
+
