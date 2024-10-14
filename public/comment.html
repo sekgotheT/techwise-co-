@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments - TECH WISE Co-operative Company</title>
+    <link rel="stylesheet" href="public/css.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Comments</h1>
+            <nav>
+                <ul>
+                    <li><a href="public/index.html">Home</a></li>
+                    <li><a href="public/about us.html">About Us</a></li>
+                    <li><a href="public/about our team.html">Our Team</a></li>
+                    <li><a href="public/services.html">Services</a></li>
+                    <li><a href="public/contact.html">Contact</a></li>
+                    <li><a href="public/apply">Apply</a></li>
+                    <li><a href="public/comments">Comments</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="comments">
+            <div class="container">
+                <h1>Leave a Comment</h1>
+                <form id="comment-form">
+                    <label for="comment-name">Name:</label>
+                    <input type="text" id="comment-name" name="name" required>
+                    
+                    <label for="comment-text">Comment:</label>
+                    <textarea id="comment-text" name="comment" required></textarea>
+                    
+                    <button type="submit">Submit Comment</button>
+                </form>
+
+                <h2>Comments:</h2>
+                <div id="comment-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TECH WISE Co-operative Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Handle comment form submission
+        document.getElementById('comment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const name = document.getElementById('comment-name').value;
+            const comment = document.getElementById('comment-text').value;
+
+            // Create a new comment element
+            const commentDiv = document.createElement('div');
+            commentDiv.classList.add('comment');
+
+            // Format the comment and name
+            commentDiv.innerHTML = `<strong>${name}:</strong> <p>${comment}</p>`;
+            
+            // Append the comment to the comment list
+            document.getElementById('comment-list').appendChild(commentDiv);
+
+            // Clear the form fields
+            document.getElementById('comment-name').value = '';
+            document.getElementById('comment-text').value = '';
+        });
+    </script>
+</body>
+</html>

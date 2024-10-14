@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Services - TECH WISE Co-operative Company</title>
+    <link rel="stylesheet" href="public/css.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Apply for Services</h1>
+            <nav>
+                <ul>
+                    <li><a href="public/index.html">Home</a></li>
+                    <li><a href="public/about us.html">About Us</a></li>
+                    <li><a href="public/about our team.html">Our Team</a></li>
+                    <li><a href="public/services.html">Services</a></li>
+                    <li><a href="public/contact.html">Contact</a></li>
+                    <li><a href="#apply">Apply</a></li>
+                    <li><a href="#comments">Comments</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="apply">
+            <div class="container">
+                <h2>Apply for Web Building Services</h2>
+                <form id="apply-form">
+                    <label for="applicant-name">Name:</label>
+                    <input type="text" id="applicant-name" name="applicant-name" required>
+                    
+                    <label for="applicant-email">Email:</label>
+                    <input type="email" id="applicant-email" name="applicant-email" required>
+                    
+                    <label for="project-description">Project Description:</label>
+                    <textarea id="project-description" name="project-description" required></textarea>
+                    
+                    <button type="submit">Apply</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TECH WISE Co-operative Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Handle apply form submission
+        document.getElementById('apply-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(this);
+            fetch('/api/apply', { // Link to the backend API
+                method: 'POST',
+                body: new URLSearchParams(formData)
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message)) // Display success message
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
