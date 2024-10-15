@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const commentsRoutes = require('./routes/comments');
 
 const commentsRouter = require('./routes/comments');
 
@@ -12,6 +13,7 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 8080;
+
 
 // Middleware
 app.use(cors());
@@ -26,6 +28,11 @@ mongoose.connect('your-mongodb-connection-string')
 
 // Routes
 app.use('/api/comments', commentsRouter);
+app.use('/comments', commentsRoutes);
+app.get('/comments', (req, res) => {
+  res.send('Comments route');
+});
+
 
 // Start the server
 app.listen(PORT, () => {
