@@ -1,0 +1,15 @@
+<servlet>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>com.example.UploadServlet</servlet-class>
+    <multipart-config>
+        <location>/tmp</location>
+        <max-file-size>1048576</max-file-size> <!-- 1MB -->
+        <max-request-size>2097152</max-request-size> <!-- 2MB -->
+        <file-size-threshold>51200</file-size-threshold> <!-- 50KB -->
+    </multipart-config>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/upload</url-pattern>
+</servlet-mapping>
