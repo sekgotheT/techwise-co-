@@ -25,13 +25,16 @@ mongoose.connect('your-mongodb-connection-string')
   .then(() => console.log('MongoDB connected successfully'))
   .catch(err => console.error('MongoDB connection error:', err));
 
+// Basic route
+app.get('/', (req, res) => {
+  res.send('Welcome to the Tech Wise API!');
+});
+
 
 // Routes
 app.use('/api/comments', commentsRouter);
 app.use('/comments', commentsRoutes);
-app.get('/comments', (req, res) => {
-  res.send('Comments route');
-});
+
 
 
 // Start the server
