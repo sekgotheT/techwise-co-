@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 // MongoDB connection setup
 // Replace 'myDatabase' with the name of your MongoDB database
-mongoose.connect('mongodb://localhost:27017/techwise-co-', {
+mongoose.connect('mongodb://localhost:27017/techwise-db', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
