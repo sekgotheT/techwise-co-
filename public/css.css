@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 90%; /* Slightly wider for smaller screens */
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -16,14 +16,14 @@ body {
 
 /* Header Styles */
 header {
-    background-image: url('logo3.jpg'); /* Corrected from img() to url() */
+    background-image: url('logo3.jpg');
     background-size: cover;
     background-position: center;
     color: white;
     padding: 40px 0;
     text-align: center;
     position: relative;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 header::before {
@@ -33,14 +33,14 @@ header::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Adds a dark overlay to make the text more readable */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
     position: relative;
-    z-index: 1; /* Ensures the heading text appears above the background overlay */
+    z-index: 1;
     margin: 0;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 /* Navigation Styles */
@@ -62,13 +62,13 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     padding: 10px 15px;
-    transition: background-color 0.3s, transform 0.3s; /* Added transform for hover effect */
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 nav ul li a:hover {
     background-color: #45a049;
     border-radius: 5px;
-    transform: translateY(-2px); /* Slightly lifts the link on hover */
+    transform: translateY(-2px);
 }
 
 /* Section Styles */
@@ -83,11 +83,11 @@ section {
 /* Services Section */
 #services {
     background-image: url('logo2.jpg');
-    background-size: cover; /* Cover the entire section */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Don't repeat the image */
-    padding: 40px; /* Add some padding */
-    color: black; /* Adjust text color for visibility */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px;
+    color: black;
 }
 
 #services h2, #services ul {
@@ -97,118 +97,99 @@ section {
 }
 
 #services ul li {
-    margin-bottom: 10px; /* Add space between list items */
+    margin-bottom: 10px;
 }
 
-.services {
-    margin: 20px 0;
-}
-
+/* Service Items */
 .service-item {
-    display: flex; /* Align items side by side */
-    align-items: center; /* Center items vertically */
-    margin-bottom: 20px; /* Space between service items */
-}
-
-.service-image {
-    max-width: 150px; /* Set a max width for the image */
-    border-radius: 10px; /* Optional: to round corners */
-    margin-right: 20px; /* Space between image and text */
-    transition: transform 0.3s; /* Added transition for hover effect */
-}
-
-.service-image:hover {
-    transform: scale(1.05); /* Slightly enlarges the image on hover */
-}
-
-.service-text {
-    flex: 1; /* Allow text to take remaining space */
-    display: flex; /* Enable flexbox for text content */
-    flex-direction: column; /* Stack heading and paragraph */
-    justify-content: center; /* Center text vertically */
-}
-
-.service-text h3 {
-    margin: 0; /* Remove default margin for heading */
-    font-size: 1.8em; /* Increased font size for headings */
-}
-
-.service-text p {
-    margin: 10px 0; /* Space between paragraphs */
-    color: #666; /* Text color */
-}
-
-/* About Us Section */
-.about-content {
-    display: flex; /* Align items side by side */
-    align-items: center; /* Center items vertically */
-    margin-top: 20px; /* Space above */
-}
-
-.about-image {
-    max-width: 300px; /* Set a max width for the image */
-    border-radius: 10px; /* Optional: to round corners */
-    margin-right: 20px; /* Space between image and text */
-}
-
-.about-text {
-    flex: 1; /* Allow text to take remaining space */
-}
-
-.about-text p {
-    margin: 10px 0; /* Space between paragraphs */
-    color: #666; /* Text color */
-}
-
-/* General style for sections with images and text */
-.section-with-image {
-    display: flex; /* Use flexbox to align image and text */
+    display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.section-with-image img {
-    max-width: 40%; /* Set image width */
-    margin-right: 20px; /* Space between image and text */
+.service-image {
+    max-width: 150px;
+    border-radius: 10px;
+    margin-right: 20px;
+    transition: transform 0.3s;
 }
 
-.section-with-image .text-content {
-    max-width: 55%; /* Set text content width */
+.service-image:hover {
+    transform: scale(1.05);
 }
 
-/* Exclude About Our Team section */
-.about-our-team {
-    display: block; /* Ensures it's displayed separately */
+.service-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-text h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.service-text p {
+    margin: 10px 0;
+    color: #666;
+}
+
+/* About Us Section */
+.about-content {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.about-image {
+    max-width: 300px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin: 10px 0;
+    color: #666;
 }
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
-    .service-item {
-        flex-direction: column; /* Stack image and text on smaller screens */
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul li {
+        display: block;
         text-align: center;
+        margin-bottom: 10px;
     }
 
-    .service-image {
-        margin-right: 0;
-        margin-bottom: 15px; /* Space below image */
-        max-width: 100%; /* Full width for smaller screens */
-    }
-
-    .service-text {
-        max-width: 100%; /* Full width for text */
-    }
-
+    .service-item,
+    .about-content,
     .section-with-image {
-        flex-direction: column; /* Stack image and text */
+        flex-direction: column;
         text-align: center;
     }
 
-    .section-with-image img {
+    .service-image,
+    .about-image {
         margin-right: 0;
         margin-bottom: 15px;
-        max-width: 100%; /* Full width for smaller screens */
+        max-width: 100%;
     }
 
+    .service-text,
+    .about-text,
     .section-with-image .text-content {
         max-width: 100%;
     }
@@ -220,10 +201,8 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: relative;
-    bottom: 0;
     width: 100%;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Form Styles */
@@ -262,27 +241,15 @@ button {
     cursor: pointer;
     border-radius: 4px;
     font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s; /* Added transform for button */
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {
     background-color: #45a049;
-    transform: translateY(-2px); /* Slightly lifts the button on hover */
+    transform: translateY(-2px);
 }
 
-/* Side content (Adverts, Video) */
-.side-content {
-    margin-top: 20px;
-}
-
-.fixed-element {
-    padding: 10px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Team Member */
+/* Team Member Section */
 .team-container {
     display: flex;
     gap: 20px;
@@ -303,21 +270,3 @@ button:hover {
     border-radius: 50%;
     max-width: 100px;
 }
-
-/* Video Section */
-.video-container {
-    margin: 10px 0;
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* Add any additional styles below */
